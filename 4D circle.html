@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Animated Circles</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    .circle-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: moveContainer 5s linear infinite alternate;
+    }
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid blue;
+      background-color: transparent;
+      animation: animateCircle 3s infinite alternate;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .circle:nth-child(2) {
+      border-color: red;
+      animation-duration: 4s;
+    }
+    .circle:nth-child(3) {
+      border-color: green;
+      animation-duration: 5s;
+    }
+    .circle:nth-child(4) {
+      border-color: yellow;
+      animation-duration: 6s;
+    }
+    .circle:nth-child(5) {
+      border-color: orange;
+      animation-duration: 7s;
+    }
+    @keyframes animateCircle {
+      0% {
+        transform: scale(0);
+        border-width: 2px;
+      }
+      50% {
+        transform: scale(2);
+        border-width: 10px;
+      }
+      100% {
+        transform: scale(0);
+        border-width: 2px;
+      }
+    }
+    @keyframes moveContainer {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        transform: translate(-50%, -20%) scale(2);
+      }
+    }
+  </style>
+</head>
+<body bgcolor="black">
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</body>
+</html>
